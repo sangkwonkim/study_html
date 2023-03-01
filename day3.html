@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+      리스트 만들기
+      1. 순서가 없는 리스트(unordered list)
+        <ul> 태그로 시작하며, 각각의 리스트 요소는 li 태그 사용
+        li 갯수만큼 검정색 동그라미로 리스트가 만들어짐
+      2. 순서가 있는 리스트(ordered list)
+      3. 정의 리스트(definition list)
+    -->
+    <ul style="list-style-type: decimal">
+      <li>안</li>
+      <li>녕</li>
+      <li>하</li>
+      <li>세</li>
+      <li>요</li>
+    </ul>
+    <!--
+      2. 순서가 있는 리스트(ordered list)
+      <ol> 태그로 시작하며, 각각의 리스트는 li 태그 사용
+      아라비아 숫자가 위치함
+    -->
+    <ol style="list-style-type: circle">
+      <li>안</li>
+      <li>녕</li>
+      <li>하</li>
+      <li>세</li>
+      <li>요</li>
+    </ol>
+    <!--
+      리스트 만들기
+      3. 정의 리스트(definition list)
+      용어와 정의를 모아놓은 리스트로 dl 태그로 시작
+      dt 태그에는 용어의 이름이
+      dd 태그에는 용어에 대한 정의
+    -->
+    <dl>
+      <dt>이름</dt>
+      <dd>홍길동</dd>
+    </dl>
+    <!-- list-style 속성 
+      1. list-style-type으로 리스트 앞에 위치하는 마커 적용 가능
+      ul, ol에 상관없이 적용됨
+      - disc : 검정색 작은 원 모양 (기본설정)
+      - circle : 흰색 작은 원 모양
+      - square : 사각형 모양
+
+      - decimal : 숫자 (기본설정)
+      - upper-alpha : 영문 대문자
+      - lower-alpha : 영문 소문자
+      - upper-roman : 로마 숫자 대문자
+      - lower-roman : 로마 숫자 소문자
+
+      2. list-style-image으로 마커를 자신만의 이미지를 사용 가능
+      style에 .imageMarker { list-style-image: url("/examples/images/img_list_marker.png"); }
+      class 지정 후 사용 가능
+
+      3. list-style-position으로 리스트 요소의 위치 설정 가능
+      기본 속성값은 outside로 설정
+    -->
+    <ol style="list-style-position: inside">
+      <li>안</li>
+      <li>녕</li>
+    </ol>
+    <ol style="list-style-position: outside">
+      <li>안</li>
+      <li>녕</li>
+    </ol>
+    <!-- style 한 번에 적용하기 
+      list-style 속성을 이용한 스타일을 한 줄에 설정 가능
+      <style>
+        ul { list-style: square inside url("/examples/images/img_list_marker.png"); }
+      </style>
+    -->
+
+    <!--
+      리스트 배경색 적용
+      <style>
+        ul { background: #D2691E; padding: 15px; } ul 리스트 배경색
+        ol { background: #6495ED; padding: 15px; } ol 리스트 배경색
+        ul li { background: #DEB887; margin: 5px; } ul의 li 요소 배경색
+        ol li { background: #00FFFF; margin-left: 15px; } ol의 li 요소 배경색
+</style>
+    -->
+  </body>
+</html>
