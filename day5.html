@@ -58,6 +58,21 @@
 
     <div>요소는 다른 HTML 요소들을 하나로 묶는 데 자주 사용되는 대표적인 블록(block) 요소
     주로 여러 요소들의 스타일을 한 번에 적용하기 위해 사용
+
+    label : 사용자 인터페이스 항목의 설명
+    <label> 을 <input> 요소와 연결할 때의 이점
+    1. 텍스트 입력과 시각적으로 관련 + 프로그래밍적으로도 관련
+    => 화면리더기(screenreader)는 폼 입력(form input)에서 label을 읽어서 보조기술(assistive technology) 사용자가 입력해야하는 텍스트가 무엇인지 더 쉽게 이해할 수 있게 함.
+    
+    2. 관련 label을 클릭해서 input 자체에 초점을 맞추거나 활성화
+    => (활성되어서)늘어난 누를 수 있는 영역(hit area)은 터치스크린 사용자를 포함해 입력하려하는 모든 사람에게 이점 제공
+    <label>을 <input> 요소와 연관시키려면, <input> 에 id 속성을 넣어야함. => <label> 에 id 와 같은 값의 for 속성 필요
+
+    <label> 안에 <input> 중첩 => 이 경우 연관이 암시적이므로 for 및 id속성이 필요음
+
+    다른 사용법 메모:
+    label이 붙여진 양식 컨트롤(form control)은 레이블된 제어(labeled control)라고 불림. 하나의 input은 여러 label들에 연관되어있음
+    연관된 양식 컨트롤(form control) 이 있는 <label>이 클릭되거나 터치되면, 이 label의 click 이벤트는 연관된 control 도 동작시킴
     -->
     <div style="background-color: grey; text-align: center">
       <h1>Block Test</h1>
