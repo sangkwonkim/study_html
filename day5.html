@@ -94,7 +94,39 @@
       안녕하세요.
       <span style="font-size: large; color: aqua">김상권</span>입니다.
     </p>
+    <p>
+      <span style="font-size: large; color: aqua">김상권 입니다.</span>
+      <span style="font-size: large; color: aqua">김상권 입니다.</span>
+      <span style="font-size: large; color: aqua; display: block"
+        >김상권 입니다.
+      </span>
+    </p>
 
+    <!--
+      display 속성 값 변경
+        display 속성값이 블록인 요소의 속성값을 인라인으로 바꿀 수 있음. 반대로 인라인인 요소의 속성값을 블록으로 바꿀 수도 있음
+
+        display 속성값을 변경해도, 실제로 해당 요소가 완전히 다른 타입의 요소로 바뀌는 것 아님
+        => display 속성값을 인라인에서 블록으로 변경했더라도, 변경된 요소는 내부에 다른 요소를 포함할 수 없음
+        처음부터 display 속성값이 블록인 요소만이 내부에 다른 요소를 포함할 수 있기 때문
+    -->
+    <!--
+      visibility 속성
+        HTML 요소가 웹 페이지에 표현될지 아닐지만을 결정 => 웹 페이지에는 나타나지 않더라도 레이아웃 내에는 여전히 존재하게 되며, 코드 내에도 당연히 존재
+        1. visible : 해당 HTML 요소를 웹 페이지에 나타냅니다.
+        2. hidden : HTML 요소를 웹 페이지에 나타내지 않습니다. 하지만 여전히 웹 페이지의 레이아웃에는 존재합니다.
+        3. collapse : 이 속성값은 동적인 테이블에서만 사용할 수 있으며, 테이블의 테두리를 한 줄만 보여줍니다.
+      
+      html 요소 숨기기
+        display: none
+        display 속성값을 none으로 설정한 것과는 달리, hidden은 눈에 보이지만 않을 뿐 여전히 웹 페이지의 레이아웃에는 존재
+
+      opacity 속성
+        HTML 요소의 투명도를 간단히 조절 가능 => 0.0부터 1.0까지 설정할 수 있으며, 속성값이 0에 가까울수록 투명한 상태
+
+        익스플로러 8과 그 이전 버전은 filter:alpha(opacity=값(0 ~ 100)) 이렇게 표현 가능
+        { opacity: 0.4; filter: alpha(opacity=40); } 이런식으로 표현하면 다른 웹 브라우져, 익스플로러 8과 이전 버전에서 투명도 표현 가능
+    -->
     <!--
       레이아웃 => 특정 공간에 여러 구성 요소를 보기 좋게 효과적으로 배치하는 작업
 
