@@ -7,6 +7,14 @@
     <title>Document</title>
     <style>
       /* HTML 요소 선택자 */
+      * {
+        color: red;
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+      }
       p {
         color: red;
       }
@@ -56,6 +64,11 @@
       3. 클래스(class) 선택자
         특정 집단의 여러 요소를 한 번에 선택할 때 사용
 
+      4. 전체 선택자
+        * {}를 사용해서 html 문서 내부의 모든 요소를 선택할 수 있음
+
+      5. 그룹 선택자
+        여러 선택자를 같이 사용하고자 할 때 사용 => 여러 선택자를 쉼표(,)로 구분하여 연결
     -->
     <div style="width: 100%; height: 300px; background-color: red"></div>
     <p>테스트입니다</p>
