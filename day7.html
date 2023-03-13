@@ -18,6 +18,9 @@
       p {
         color: red;
       }
+      div p {
+        background-color: aqua;
+      }
       #test {
         background-color: aqua;
         width: 100%;
@@ -69,6 +72,16 @@
 
       5. 그룹 선택자
         여러 선택자를 같이 사용하고자 할 때 사용 => 여러 선택자를 쉼표(,)로 구분하여 연결
+
+      결합 선택자
+        연관된 선택자들 간의 관계를 설정해줌
+        1. 자손 선택자
+          해당 요소의 하위 요소 중에서 특정 타입의 요소를 모두 선택
+          ex) div p {스타일}
+        2. 자식 선택자
+          해당 요소의 바로 밑에 존재하는 하위 요소 중에서 특정 타입의 요소를 모두 선택
+          ex) div > p {스타일}
+
     -->
     <div style="width: 100%; height: 300px; background-color: red"></div>
     <p>테스트입니다</p>
