@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 아래와 같이 테이블과 각 요소의 border를 구현할 수 있는데, 단순히 border를 사용하면 전체 테이블, 각 열에도 줄이 생김 
+      border-collapse: collapse 속성을 추가해줌으로써 전체적으로 한 줄로 구분할 수 있음
+      여기서 border-collapse 속성은 표 테두리가 분리(separate) 또는 상쇄(collapse)될 지를 결정함
+      separate 속성이 기본값임
+    -->
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    테이블(Table)이란 여러 종류의 데이터(data)를 보기 좋게 정리하여 보여주는 표
+    <table>태그 내부에 다음 구성 태그를 사용해서 테이블 구성
+    구성
+      1. <tr>태그는 테이블에서 열을 구분
+      2. <th>태그는각 열의 제목을 나타내며, 모든 내용은 자동으로 굵은 글씨에 가운데 정렬
+      3. <td>태그는 테이블의 열을 각각의 셀(cell)로 나누어 줌
+
+
+    열 병합 
+    colspan 속성을 사용하면 테이블의 열 병합이 가능함
+    예시 colspan = '2' 2개의 열 병합
+
+    행 병합
+    rowspan 속성을 사용하면 테이블의 행 병합이 가능함
+    예시 rowspan = '2'
+  -->
+    <h1>테이블 test</h1>
+    <table style="width: 100%">
+      <tr style="background-color: gray">
+        <th>이름</th>
+        <th>나이</th>
+        <th>주소</th>
+      </tr>
+      <tr style="text-align: center">
+        <td>김상권</td>
+        <td>32살</td>
+        <td>서울특별시</td>
+      </tr>
+    </table>
+    <br />
+    <table style="width: 100%">
+      <tr style="text-align: center">
+        <td colspan="2">김치</td>
+        <td>된장</td>
+      </tr>
+      <tr style="text-align: center">
+        <td>김치찌개</td>
+        <td>김치찜</td>
+        <td>된장찌개</td>
+      </tr>
+    </table>
+    <br />
+    <table style="table-layout: auto">
+      <tr style="text-align: center">
+        <td rowspan="2">김치</td>
+        <td>된장</td>
+      </tr>
+      <tr style="text-align: center">
+        <td>된장찌개</td>
+      </tr>
+    </table>
+    <!-- 
+      word-break 속성은 텍스트가 자신의 콘텐츠 박스 밖으로 오버플로 할 때 줄을 바꿀 지 지정
+      table-layout 속성의 table의 cell, 열, 행의 크기를 조정
+      <caption>태그를 사용하면 테이블 상단에 제목이나 짧은 설명을 붙일 수 있
+    -->
+    <br />
+    <table>
+      <caption>
+        메뉴
+      </caption>
+      <tr style="text-align: center">
+        <td rowspan="2">김치</td>
+        <td>된장</td>
+      </tr>
+      <tr style="text-align: center">
+        <td>된장찌개</td>
+      </tr>
+    </table>
+  </body>
+</html>

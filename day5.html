@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #header {
+        background-color: beige;
+        height: 100px;
+      }
+      #nav {
+        background-color: green;
+        color: white;
+        width: 200px;
+        height: 300px;
+        float: left;
+      }
+      #section {
+        width: 200px;
+        text-align: left;
+        float: left;
+        padding: 10px;
+      }
+      #footer {
+        background-color: yellowgreen;
+        height: 100px;
+        clear: both;
+      }
+      #header,
+      #nav,
+      #section,
+      #footer {
+        text-align: center;
+      }
+      #header,
+      #footer {
+        line-height: 100px;
+      }
+      #nav,
+      #section {
+        line-height: 240px;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+    HTML의 모든 요소는 해당 요소가 웹 브라우저에 어떻게 보이는가를 결정짓는 display 속성 가짐
+    대부분의 HTML 요소는 이러한 display 속성값으로 다음 두 가지 값 중 하나를 가짐
+    1. block
+    2. inline
+  -->
+    <!--
+    block
+    display 속성값이 블록(block)인 요소는 언제나 새로운 라인(line)에서 시작하며, 해당 라인의 모든 너비를 차지
+    <p>, <div>, <h>, <ul>, <ol>, <form>요소는 display 속성값이 블록(block)인 대표적인 요소
+
+    <div>요소는 다른 HTML 요소들을 하나로 묶는 데 자주 사용되는 대표적인 블록(block) 요소
+    주로 여러 요소들의 스타일을 한 번에 적용하기 위해 사용
+
+    label : 사용자 인터페이스 항목의 설명
+    <label> 을 <input> 요소와 연결할 때의 이점
+    1. 텍스트 입력과 시각적으로 관련 + 프로그래밍적으로도 관련
+    => 화면리더기(screenreader)는 폼 입력(form input)에서 label을 읽어서 보조기술(assistive technology) 사용자가 입력해야하는 텍스트가 무엇인지 더 쉽게 이해할 수 있게 함.
+    
+    2. 관련 label을 클릭해서 input 자체에 초점을 맞추거나 활성화
+    => (활성되어서)늘어난 누를 수 있는 영역(hit area)은 터치스크린 사용자를 포함해 입력하려하는 모든 사람에게 이점 제공
+    <label>을 <input> 요소와 연관시키려면, <input> 에 id 속성을 넣어야함. => <label> 에 id 와 같은 값의 for 속성 필요
+
+    <label> 안에 <input> 중첩 => 이 경우 연관이 암시적이므로 for 및 id속성이 필요음
+
+    다른 사용법 메모:
+    label이 붙여진 양식 컨트롤(form control)은 레이블된 제어(labeled control)라고 불림. 하나의 input은 여러 label들에 연관되어있음
+    연관된 양식 컨트롤(form control) 이 있는 <label>이 클릭되거나 터치되면, 이 label의 click 이벤트는 연관된 control 도 동작시킴
+    -->
+    <div style="background-color: grey; text-align: center">
+      <h1>Block Test</h1>
+      <p>Block 속성인 태그들을 테스트 합니다.</p>
+      <form>
+        <label>테스트 값 입력하기: </label>
+        <input type="text" />
+      </form>
+    </div>
+    <!--
+      inline
+      display 속성값이 인라인(inline)인 요소는 새로운 라인(line)에서 시작하지 않음
+      요소의 너비도 해당 라인 전체가 아닌 해당 HTML 요소의 내용(content)만큼만 차지
+      <span>, <a>, <img>요소는 display 속성값이 인라인(inline)인 대표적인 요소
+
+      <span>요소는 텍스트(text)의 특정 부분을 묶는 데 자주 사용되는 인라인(inline) 요소로, 텍스트의 일부에 다른 스타일을 적용하기 위해 사용
+    -->
+    <p>
+      안녕하세요.
+      <span style="font-size: large; color: aqua">김상권</span>입니다.
+    </p>
+    <p>
+      <span style="font-size: large; color: aqua">김상권 입니다.</span>
+      <span style="font-size: large; color: aqua">김상권 입니다.</span>
+      <span style="font-size: large; color: aqua; display: block"
+        >김상권 입니다.
+      </span>
+    </p>
+
+    <!--
+      display 속성 값 변경
+        display 속성값이 블록인 요소의 속성값을 인라인으로 바꿀 수 있음. 반대로 인라인인 요소의 속성값을 블록으로 바꿀 수도 있음
+
+        display 속성값을 변경해도, 실제로 해당 요소가 완전히 다른 타입의 요소로 바뀌는 것 아님
+        => display 속성값을 인라인에서 블록으로 변경했더라도, 변경된 요소는 내부에 다른 요소를 포함할 수 없음
+        처음부터 display 속성값이 블록인 요소만이 내부에 다른 요소를 포함할 수 있기 때문
+    -->
+    <!--
+      visibility 속성
+        HTML 요소가 웹 페이지에 표현될지 아닐지만을 결정 => 웹 페이지에는 나타나지 않더라도 레이아웃 내에는 여전히 존재하게 되며, 코드 내에도 당연히 존재
+        1. visible : 해당 HTML 요소를 웹 페이지에 나타냅니다.
+        2. hidden : HTML 요소를 웹 페이지에 나타내지 않습니다. 하지만 여전히 웹 페이지의 레이아웃에는 존재합니다.
+        3. collapse : 이 속성값은 동적인 테이블에서만 사용할 수 있으며, 테이블의 테두리를 한 줄만 보여줍니다.
+      
+      html 요소 숨기기
+        display: none
+        display 속성값을 none으로 설정한 것과는 달리, hidden은 눈에 보이지만 않을 뿐 여전히 웹 페이지의 레이아웃에는 존재
+
+      opacity 속성
+        HTML 요소의 투명도를 간단히 조절 가능 => 0.0부터 1.0까지 설정할 수 있으며, 속성값이 0에 가까울수록 투명한 상태
+
+        익스플로러 8과 그 이전 버전은 filter:alpha(opacity=값(0 ~ 100)) 이렇게 표현 가능
+        { opacity: 0.4; filter: alpha(opacity=40); } 이런식으로 표현하면 다른 웹 브라우져, 익스플로러 8과 이전 버전에서 투명도 표현 가능
+    -->
+    <!--
+      레이아웃 => 특정 공간에 여러 구성 요소를 보기 좋게 효과적으로 배치하는 작업
+
+      1. div 요소를 이용한 레이아웃
+      2. HTML5 레이아웃
+      3. table 요소를 이용한 레이아웃
+    -->
+
+    <!--
+      div 요소는 CSS 스타일을 손쉽게 적용할 수 있으므로, 레이아웃을 작성하는데 자주 사용
+    -->
+    <h1>div 요소를 이용한 레이아웃</h1>
+    <div id="header">
+      <h2>HEADER 영역</h2>
+    </div>
+    <div id="nav">
+      <h2>NAV 영역</h2>
+    </div>
+    <div id="section">
+      <p>SECTION 영역</p>
+    </div>
+    <div id="footer">
+      <h2>FOOTER 영역</h2>
+    </div>
+    <!--
+      float 속성은 해당 HTML 요소가 주변의 다른 요소들과 자연스럽게 어울리도록 만들어줌
+      사진 왼 쪽에 텍스트를 넣기 위해서는 사진의 속성을 float: left로 설정해주면 텍스트가 옆쪽으로 이동할 수 있음
+      clear 속성은 float 속성이 적용된 이후 나타나는 요소들의 동작을 조절
+        요소가 선행 부동(floating) 요소 다음일 수 있는지 또는 그 아래로 내려가(해제되어(cleared))야 하는 지를 지정
+      float 속성을 적용하고자 하는 요소가 모두 등장한 이후에는 clear 속성을 사용하여, 이후에 등장하는 요소들이 더는 flaot 속성에 영향을 받지 않도록 설정해줘야 함
+      left, right는 각각 왼편 오른편에 적용된 float를 clear하고 아래부분에 위치하는 지 여부를 결정하며
+      both left, right 둘 다 clear
+
+      line-height는 라인 박스의 높이를 지정 대게 텍스트 라인 사이의 거리를 지정
+    -->
+  </body>
+</html>

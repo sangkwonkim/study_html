@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 2px solid red;
+      }
+      table {
+        width: 100px;
+        table-layout: auto;
+        border-collapse: collapse;
+        /* border-collapse: separate; */
+        /* border-spacing: 80px 50px; */
+      }
+      th {
+        /* vertical-align: top; */
+        /* height: 50px; */
+        /* text-align: center; */
+      }
+      td {
+        width: 50px;
+        /* vertical-align: bottom; */
+        /* text-align: center; */
+      }
+      tr:hover {
+        background-color: azure;
+      }
+      tr:nth-child(odd) {
+        background-color: #f3f3f3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- css 테이블 속성
+      1. border
+        테이블의 테두리(border)를 설정
+        명시하지 않으면 해당 테이블은 기본 설정으로 빈 테두리
+      2. border-collapse
+        속성값을 collapse로 설정하면 해당 테이블의 테두리는 한 줄로 표현
+      3. border-spacing
+        테이블 요소(th, td)간의 여백을 설정
+        첫번째 인자는 행 방향, 두번째 인자는 열 방향 여백
+      4. text-align, vertical-align
+        text-align 속성은 테이블 요소(th, td) 내부에서 텍스트의 수평 방향 정렬
+        vertical-align 속성은 테이블 요소(th, td) 내부에서 텍스트의 수직 방향 정렬
+      5. caption-side
+        테이블의 캡션의 위치를 정하는 속성
+        top, bottom, initial, inherit
+      5. empty-cells
+        빈 셀의 테두리를 표시할지 말지는 정하는 속성
+        show : 빈 셀의 테두리를 보여줍니다.
+        hide : 빈 셀의 테두리를 숨깁니다.
+        initial : 기본값으로 설정합니다.
+        inherit : 부모 요소의 속성값을 상속받습니다.
+      6. table-layout
+        행(row)과 열(column)으로 구성된 테이블(table)의 셀(cell)에 블록요소를 집어넣어 보여주는 방법
+
+      background-color 속성과 :nth-child 선택자를 사용하여 얼룩무늬 효과를 만들 수 있음
+
+      구조 의사 클래스(structural pseudo-class) => HTML 요소의 계층 구조에서 특정 위치에 있는 요소를 선택 가능
+      - :first-child => 모든 자식(child) 요소 중에서 맨 앞에 위치하는 자식(child) 요소를 모두 선택
+      - :last-child => 모든 자식(child) 요소 중에서 맨 마지막에 위치하는 자식(child) 요소를 모두 선택
+      - :nth-child(배수값 + n) => 모든 자식(child) 요소 중에서 앞에서부터 n번째에 위치하는 자식(child) 요소를 모두 선택
+      - :nth-last-child => 모든 자식(child) 요소 중에서 뒤에서부터 n번째에 위치하는 자식(child) 요소를 모두 선택
+      - :first-of-type => 모든 자식(child) 요소 중에서 맨 처음으로 등장하는 특정 타입의 요소를 모두 선택
+      - :last-of-type => 모든 자식(child) 요소 중에서 맨 마지막으로 등장하는 특정 타입의 요소를 모두 선택
+      - :nth-of-type => 모든 자식(child) 요소 중에서 n번째로 등장하는 특정 타입의 요소를 모두 선택
+      - :nth-last-of-type => 모든 자식(child) 요소 중에서 뒤에서부터 n번째로 등장하는 특정 타입의 요소를 모두 선택
+
+
+
+      ** table-layout에서 fixed로 하여 값이 밖으로 나가는 것을 표현하려고 할 때
+      table의 width만 설정해서는 값이 밖으로 나가질 않고 테이블의 높이가 변경되며 맞춰지며 원하는 대로 테이블이 만들어지지 않았습니다.
+      이후 td의 width를 정하니 원하는 대로 표현할 수 있었습니다.
+      근데 또 이후에는 td의 width를 지워도 테이블의 높이가 변하며 맞춰지는 것이 아닌 테이블 밖으로 데이터가 출력되었습니다.
+
+      원인을 더 알아볼 예정입니다.
+    -->
+    <table>
+      <tr>
+        <th>순서</th>
+        <th>나이</th>
+        <th>이름</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>32</td>
+        <td>홍길동asdfasdfasdfasdfasdfasdfasdfafsd</td>
+      </tr>
+    </table>
+    <!-- 이미지 스프라이트 image sprite
+      여러 개의 이미지를 하나의 이미지로 합쳐서 관리하는 이미지를 의미
+      웹 페이지에서 이미지를 사용할 경우 이미지를 다운 받기 위해 서버에 요청하게 되는데
+      사용하는 이미지가 많을 경우 요청이 많아지고 이로 인해 로딩 시간이 길어질 수 있음
+      => 하나의 이미지를 backgroud-position을 이용해서 이미지를 잘라 사용할 수 있음
+
+      ex) .좌, .우, .상, .하 (backgroud: url())
+      .좌 { width, height, backgroud-position: 행 방향 위치, 열 방향 위치 }
+      .우 { width, height, backgroud-position: 행 방향 위치, 열 방향 위치 }
+      .상 { width, height, backgroud-position: 행 방향 위치, 열 방향 위치 }
+      .하 { width, height, backgroud-position: 행 방향 위치, 열 방향 위치 }
+      => 이처럼 하나의 이미지를 구분해서 사용할 수 있음
+    -->
+  </body>
+</html>

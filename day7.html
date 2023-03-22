@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* HTML 요소 선택자 */
+      * {
+        color: red;
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+      }
+      p {
+        color: red;
+      }
+      div p {
+        background-color: aqua;
+      }
+      #test {
+        background-color: aqua;
+        width: 100%;
+        height: 50px;
+      }
+      .test {
+        background-color: aqua;
+        width: 100%;
+        height: 50px;
+      }
+    </style>
+    <!-- 외부 스타일 시트 예시 -->
+    <link rel="stylesheet" href="dayCss.css" />
+  </head>
+  <body>
+    <!-- html과 css
+      CSS = cading Style Sheets의 약자
+      CSS는 HTML 요소들이 각종 미디어에서 어떻게 보이는가를 정의하는 데 사용되는 스타일 시트 언어
+
+      CSS 적용 방법
+      1. 인라인 스타일(Inline style)
+        HTML 요소 내부에 style 속성을 사용하여 CSS 스타일을 적용하는 방법
+      2. 내부 스타일 시트(Internal style sheet)
+        HTML 문서의 <head>태그 내에 <style>태그를 사용하여 스타일을 지정 => 해당 HTML 문서에만 스타일을 적용
+      3. 외부 스타일 시트(External style sheet)
+        웹 사이트 전체의 스타일을 하나의 파일에서 변경할 수 있도록 해줌
+        스타일을 적용할 모든 웹 페이지의 <head>태그 내에 <link>태그를 사용하여 외부 스타일 시트를 포함
+
+      스타일 적용의 우선순위
+      1. 인라인 스타일
+      2. 내부 / 외부 스타일 시트
+      3. 웹 브라우저 기본 스타일
+
+      CSS 선택자(selector)
+      스타일을 적용할 HTML 요소를 선택하는데 사용하는 대표적인 선택자는 다음과 같습니다.
+      1. HTML 요소 선택자
+        CSS를 적용할 대상으로 HTML 요소의 이름을 직접 사용하여 선택
+      2. 아이디(id) 선택자
+        아이디 선택자는 CSS를 적용할 대상으로 특정 요소를 선택할 때 사용
+        웹 페이지에 포함된 여러 요소 중에서 특정 아이디 이름을 가지는 요소만을 선택
+
+        HTML과 CSS에서는 하나의 웹 페이지에 속하는 여러 요소에 같은 아이디 이름을 사용해도 별 문제없이 동작 => 중복된 아이디를 가지고 자바스크립트 작업을 하게 되면 오류가 발생
+        하나의 웹 페이지에 속하는 요소에는 다른 아이디 이름을 사용하거나 클래스를 사용하는 것이 좋음
+      3. 클래스(class) 선택자
+        특정 집단의 여러 요소를 한 번에 선택할 때 사용
+
+      4. 전체 선택자
+        * {}를 사용해서 html 문서 내부의 모든 요소를 선택할 수 있음
+
+      5. 그룹 선택자
+        여러 선택자를 같이 사용하고자 할 때 사용 => 여러 선택자를 쉼표(,)로 구분하여 연결
+
+      결합 선택자
+        연관된 선택자들 간의 관계를 설정해줌
+        1. 자손 선택자
+          해당 요소의 하위 요소 중에서 특정 타입의 요소를 모두 선택
+          ex) div p {스타일}
+        2. 자식 선택자
+          해당 요소의 바로 밑에 존재하는 하위 요소 중에서 특정 타입의 요소를 모두 선택
+          ex) div > p {스타일}
+      
+      동위 선택자
+        동위 관계에 있는 요소 중에서 해당 요소보다 뒤에 존재하는 특정 타입의 요소를 모두 선택
+                          body
+          요소노드      요소노드        요소노드
+          텍스트노드    텍스트노드     텍스트노드
+        이런 경우, 요소노드는 body를 부모 요소로 가짐 => 요소노드들은 동위 관계에 있는 형제 요소임
+        1. 일반 동위 선택자
+          해당 요소와 동위 관계에 있으며, 해당 요소보다 html문서 아랫부분에 존재하는 특정 타입의 요소를 모두 선택함
+          div ~ p {스타일;}
+          <div>
+            <p>현재의 p태그는 div의 자식 태그임</p>
+          </div>
+          <p>이 p태그가 div와 동위 관계에 있으며, div태그보다 아랫부분에 위치해서 div ~ p 스타일을 적용받음</p>
+        2. 인접 동위 선택자
+          해당 요소와 동위 관계에 있으며, 해당 요소의 바로 아래에 존재하는 특정 타입의 요소를 모두 선택
+          div + p {스타일;}
+          <div>
+            <p>이 태그는 위 div의 자식이며, 아래 div와 동위 관계에 있음</p>
+            <div>
+              <p>이 태그는 div의 자식 태그임</p>
+            </div>
+            <p>바로 위의 div태그의 동위 관계에 있으며, 바로 아래에 위치해서 div + p 스타일을 적용 받음</p>
+          </div>
+          <p>바로 위의 div태그의 동위 관계에 있으며, 바로 아래에 위치해서 div + p 스타일을 적용 받음</p>
+          <p>바로 위의 div태그의 동위 관계에 있지만, 바로 아래에 위치하지 않아 div + p 스타일을 적용받지 않음</p>
+
+    -->
+    <div style="width: 100%; height: 300px; background-color: red"></div>
+    <p>테스트입니다</p>
+    <div id="test"></div>
+    <br />
+    <div class="test"></div>
+  </body>
+</html>

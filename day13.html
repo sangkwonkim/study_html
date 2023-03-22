@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div.width {
+        width: 800px;
+        border: 2px solid #daa520;
+      }
+      div.maxWidth {
+        max-width: 800px;
+        border: 2px solid #cd5c5c;
+      }
+      div.minWidth {
+        min-width: 800px;
+        width: 900px;
+        border: 2px solid #cd5c5c;
+      }
+      p.maxHeight {
+        max-height: 50px;
+        background-color: greenyellow;
+        overflow: auto;
+      }
+      p.minHeight {
+        min-height: 10px;
+        background-color: greenyellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- css Demision
+    CSS에서 크기 조절을 위해 사용할 수 있는 속성
+    1. height
+    2. width
+    3. max-width
+      해당 HTML 요소가 가질 수 있는 최대 너비(width)를 설정
+      기본 설정값은 none이며, 해당 HTML 요소의 너비에 제한을 두지 않겠다는 의미
+      width 속성으로 너비를 설정하면, 설정된 너비 이하로 브라우저의 크기가 줄어들 때 해당 요소에 스크롤 바를 생성
+      하지만, max-width 속성으로 너비를 설정하면 줄어드는 웹 브라우저의 크기에 맞춰 해당 HTML 요소의 너비도 자동으로 줄어듬
+    4. min-width
+      HTML 요소가 가질 수 있는 최소 너비(width)를 설정
+      기본 설정값은 0이며, 해당 HTML 요소의 너비에 제한을 두지 않겠다는 의미
+      min-width 속성이 설정된 요소에 width 속성값을 따로 설정하지 않으면 초기 너비(width)는 100% => 웹 브라우저의 크기가 줄어들면 거기에 맞춰 HTML 요소의 너비도 자동으로 줄어듬
+      min-width와 width를 함께 설정 시 웹 브라우저의 크기가 줄어들면 일반 width와 동일하게 줄어듬
+      => 웹 브라우저가 min-width 속성으로 설정된 너비 이하로 줄어들면, HTML 요소의 너비는 더는 줄어들지 않고 수평 스크롤 바를 생성
+    5. max-height
+      해당 HTML 요소가 가질 수 있는 최대 높이(height)를 설정
+      기본 설정값은 none이며, 해당 HTML 요소의 크기에 따라 높이가 자동으로 설정
+      max-height 속성으로 최대 높이를 설정하면, 해당 HTML 요소의 높이를 설정된 높이 이하로 제한 => 해당 요소의 높이가 설정된 최대 높이보다 클 경우에는 수직 스크롤 바를 생성
+      p 태그에서 max-height이 없으면 텍스트를 다 채우는 크기로 만들어짐
+    6. min-height
+      지정된 HTML 요소가 가질 수 있는 최소 높이(height)를 설정
+      기본 설정값은 0이며, 해당 HTML 요소의 높이에 제한을 두지 않겠다는 의미
+      min-height 속성을 설정하면 해당 HTML 요소의 높이를 설정된 높이 이하로 제한 => height 속성값이 min-height 속성값 이하로 낮아지지 않도록 함
+      min-height 속성값은 max-height 속성값과 height 속성값보다 먼저 적용
+      height를 텍스트의 높이 보다 낮다면, 해당 높이까지만 backgroud-color가 적용됨
+    -->
+    <div class="width">이 div 요소는 width 속성을 800px로 설정했습니다.</div>
+    <br />
+    <div class="maxWidth">
+      이 div 요소는 max-width 속성을 800px로 설정했습니다.
+    </div>
+    <div class="minWidth">
+      이 div 요소는 min-width 속성을 800px로 설정했습니다.
+    </div>
+    <p class="maxHeight">
+      이 div 요소는 max-height 속성을 50px로 설정했습니다.<br />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+      ligula non ligula iaculis semper at vitae ante. Sed condimentum viverra
+      sollicitudin. Phasellus sodales ipsum nec nulla luctus, in luctus ipsum
+      vestibulum. Pellentesque vehicula lectus a ex tincidunt, eget pellentesque
+      nisl posuere. Vestibulum sed purus sapien. Aenean consequat urna sit amet
+      quam pulvinar, in interdum augue volutpat. Donec ex leo, feugiat vel lorem
+      non, blandit venenatis elit. Vestibulum eu erat eget ante consequat
+      iaculis.
+    </p>
+    <p class="minHeight">
+      이 div 요소는 max-height 속성을 50px로 설정했습니다.<br />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam quis
+      ligula non ligula iaculis semper at vitae ante. Sed condimentum viverra
+      sollicitudin. Phasellus sodales ipsum nec nulla luctus, in luctus ipsum
+      vestibulum. Pellentesque vehicula lectus a ex tincidunt, eget pellentesque
+      nisl posuere. Vestibulum sed purus sapien. Aenean consequat urna sit amet
+      quam pulvinar, in interdum augue volutpat. Donec ex leo, feugiat vel lorem
+      non, blandit venenatis elit. Vestibulum eu erat eget ante consequat
+      iaculis.
+    </p>
+  </body>
+</html>
