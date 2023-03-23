@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--
+    grid game
+    CSS 그리드 레이아웃(Grid Layout)은 페이지를 여러 주요 영역으로 나누거나, 크기와 위치 및 문서 계층 구조의 관점에서 HTML 기본 요소로 작성된 콘트롤 간의 관계를 정의하는 데 아주 탁월
+    그리드 레이아웃은 세로 열과 가로 행을 기준으로 요소를 정렬 가능
+
+    display: grid
+
+    grid-template-columns / grid-template-rows
+      grid column(vertical track의 grid column임)의 열과 행 이름과 트랙 크기 조정 함수들을 정의
+      ex) 60px 60px
+      repeat(8, 12.5%) => 12.5%씩 8개로 열과 행을 나눈다
+      em도 가능
+    grid-template-areas
+      그리드 area의 이름을 지정해 그리드의 셀을 설정하고 이름 할당
+      ex)   "a b b"
+            "a c d";
+    grid-auto-columns
+      암시적으로 생성된 그리드 열 트랙 또는 트랙 패턴의 크기 지정
+    grid-auto-rows
+      암시적으로 생성된 그리드 행 트랙 또는 트랙 패턴의 크기 지정
+    fr 단위
+      유연한 단위로 그리드 컨테이너의 여유 공간을 비율로 나눠 설정
+      퍼센트(%) 단위와 유사해 보일 수 있으나, 퍼센트 값과 다르게 길이가 아님 => calc() 함수에서 다른 값과 함께 처리 불가능
+    grid-column-start/end
+      그리드 요소의 시작/마지막 열 위치를 정의
+      둘 다 같이 지정하면 start~end까지 적용
+      양수 / 음수 가능s
+      span으로 열의 넓이 지정 가능
+      grid-column을 사용해서 /를 이용하면 갯수 / 끝으로 한 번에 지정 가능
+    grid-row-start/end
+      그리드 요소의 시작/마지막 행 위치를 정의
+      둘 다 같이 지정하면 start~end까지 적용
+      양수 / 음수 가능
+      span으로 열의 넓이 지정 가능
+      grid-row를 사용해서 /를 이용하면 갯수 / 끝으로 한 번에 지정 가능
+    grid-area
+      /(슬래쉬)로 구분지어 grid-row-start, grid-column-start, grid-row-end, grid-column-end순으로 입력 가능
+    order 속성
+      그리드 요소들이 grid-area, grid-column, grid-row, 기타 등을 사용하지 않고, 표시될 경우 소스코드에 기입된 순서대로 표기
+      기본적으로, 그리드의 모든 요소들은 order의 값이 0이지만, z-index와 같이 양수와 음수의 값 모두 설정이 가능
+    grid-template
+      grid-template-rows와 grid-template-columns를 조합한 단축 속성으로
+      grid-template-rows / grid-template-columns으로 표현
+  --></body>
+</html>
